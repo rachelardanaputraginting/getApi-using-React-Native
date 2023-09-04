@@ -1,12 +1,15 @@
-import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import NavigationTabs from './routes/NavigationTabs'
+import Router from './routes/NavigationTabs'
+import { NavigationContainer } from '@react-navigation/native';
 
 const App = () => {
 
   
   return (
-    <NavigationTabs />
+    <NavigationContainer>
+    <Router />
+    </NavigationContainer>
   )
 }
 

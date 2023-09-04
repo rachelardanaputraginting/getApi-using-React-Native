@@ -12,8 +12,6 @@ const Home = ({ navigation }) => {
             .then(response => {
                 // Data yang diambil dari API sekarang tersedia di sini
                 setData(response.data);
-
-                // Lakukan apa pun yang perlu Anda lakukan dengan data tersebut
             })
             .catch(error => {
                 // Tangani kesalahan yang mungkin terjadi selama proses pengambilan data
@@ -22,13 +20,10 @@ const Home = ({ navigation }) => {
     }, [])
 
     return (
-        <SafeAreaView className="bg-slate-100 px-4">
-            <View className="w-full p-3 py-5 rounded my-8 mb-24 bg-white mb-4 shadow">
-                <Text className="px-2 text-center font-semibold text-[20px] text-slate-700">Daftar Pahlawan Indonesia</Text>
-            </View>
-            <ScrollView className="mb-32">
+        <ScrollView className="my-1 mb-2">
+            <SafeAreaView className="bg-slate-100 px-4">
                 {data.map((item, index) => (
-                    <View key={index} className="bg-red-600 w-full p-3 rounded bg-white mt-1  flex flex-row justify-between items-center overflow-y-scroll" >
+                    <View key={index} className="bg-red-600 w-full p-3 rounded bg-white mt-2  flex flex-row justify-between items-center overflow-y-scroll" >
                         <Text className="text-slate-700">{index + 1}</Text>
                         <Text className="text-slate-700 hover:text-sky-500">
                             {item.name}
@@ -39,8 +34,8 @@ const Home = ({ navigation }) => {
                     </View>
                 )
                 )}
-            </ScrollView>
-        </SafeAreaView>
+            </SafeAreaView>
+        </ScrollView>
     )
 }
 
